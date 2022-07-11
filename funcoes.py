@@ -766,6 +766,7 @@ class Geometria:
 #              #
 ################
 
+# comentario inutil
 
 conts = Constantes()
 DM = conts.NOME_MUNICIPIOS
