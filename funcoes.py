@@ -20,7 +20,7 @@
 ###################
 
 import sys
-sys.stdout.shell.write("Importando Modulos...\n","COMMENT")
+#sys.stdout.shell.write("Importando Modulos...\n","COMMENT")
 
 import re
 import os
