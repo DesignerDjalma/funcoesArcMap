@@ -279,11 +279,29 @@ def gd_para_gms(valor, casas=15):
         valor (_type_): _description_
         casas (int, optional): _description_. Defaults to 15.
     """
+    def NEWS(v):
+        if -60 < v < -46:
+            return "W"
+        if -10 < v < 3:
+            if v > 0:
+                return "N"
+            if v < 0:
+                return "S"
+            if v == 0:
+                return ""
+    
+    # Verifcação trocar de sinal
+    sinal = ""
+    if valor < 0:
+        valor = abs(valor)
+        sinal = "-"
+
     graus, r = int(valor), valor-int(valor)
     minutos, r2 = int(r*60), r*60-int(r*60) 
     segundos = round(r2*60, casas)
-    resultado = '{}°{}\'{}\"'.format(graus, minutos, segundos)
+    resultado = '{}{}°{}\'{}\" {}'.format(sinal,graus, minutos, segundos, NEWS(valor))
     print(resultado)
+    return texto(resultado)
 
 def gms_para_gd_lista(arquivo_texto):
     """
