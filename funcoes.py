@@ -295,13 +295,13 @@ def gd_para_gms(valor, casas=15):
     if valor < 0:
         valor = abs(valor)
         sinal = "-"
-
+    ################## AQUI NAAAAAAAAAAAAAAAO ANIMAL
     graus, r = int(valor), valor-int(valor)
     minutos, r2 = int(r*60), r*60-int(r*60) 
     segundos = round(r2*60, casas)
-    resultado = '{}{}°{}\'{}\" {}'.format(sinal,graus, minutos, segundos, NEWS(valor))
+    resultado = '{}{}°{}\'{:.06f}\" {}'.format(sinal,graus, minutos, segundos, NEWS(valor))
     print(resultado)
-    return texto(resultado)
+    return resultado
 
 def gms_para_gd_lista(arquivo_texto):
     """
