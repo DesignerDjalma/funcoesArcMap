@@ -30,6 +30,18 @@ import fnmatch
 import getpass
 import arcpy
 
+# funções destaque do dia
+
+def gms2gd(d,g,m,s):
+    gdc = (float(g) + float(m)/60 + float(s)/(60*60)) * (d)
+    return gdc
+    
+def f2(*lista):
+    v = gms2gd(*lista)
+    v = str(v)
+    v = v.replace('.',',')
+    print(v)
+
 
 #########################
 #                       #
@@ -267,8 +279,9 @@ class Constantes:
 
 
 
+
 def gms_para_dg(valor, casas=15):
-    grau, _, minuto, segundo, direcao =  re.split('[°\'"]', valor)
+    grau, minuto, segundo, direcao =  re.split('[°\'"]', valor)
     gdc = (float(grau) + float(minuto)/60 + float(segundo)/(60*60)) * (-1 if direcao in ['W', 'S', 'O'] else 1)
     return round(gdc, casas)
 
