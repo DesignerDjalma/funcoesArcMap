@@ -32,15 +32,16 @@ import arcpy
 
 # funções destaque do dia
 
-def gms2gd(d,g,m,s):
+def gms2gd(g,m,s,d=-1):
     gdc = (float(g) + float(m)/60 + float(s)/(60*60)) * (d)
     return gdc
     
-def f2(*lista):
+def f(*lista):
     v = gms2gd(*lista)
     v = str(v)
     v = v.replace('.',',')
     print(v)
+
 
 
 #########################
